@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modern Image Slider</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap" rel="stylesheet">
+    <style>
+        * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* General body styling - sets up the page's background, font, and center alignment */
+body {
+    font-family: 'Poppins', sans-serif; /* Applies the Poppins font to the entire page */ /* Gradient background */ /* Enables flexbox layout */
+    justify-content: center; /* Centers content horizontally */
+    align-items: center; /* Centers content vertically */
+    
+    text-align: center; /* Centers text alignment */
+    color: white; /* Sets the text color to white */
+}
+
+/* Container for the entire slider section including the title and slider itself */
+.background {
+    padding: 20px;
+    height: 100%; /* Sets the height to fill the available space */
+    display: flex; /* Enables flexbox layout */
+    
+}
+
+/* Styling for the title above the slider */
+.slider-title {
+    font-size: 4rem; /* Large font size for the title */
+    margin-bottom: 20px; /* Space below the title */
+    font-weight: 600; /* Semi-bold font weight */
+}
+
+/* Main container for the slider - this holds the images and navigation buttons */
+.slider-container {
+    position: relative; /* Allows for absolute positioning of navigation buttons *//* Sets the slider width to 60% of the parent container */
+    max-width: 700px; /* Maximum width for larger screens */
+    overflow: hidden; /* Hides the overflow content (only one image is visible at a time) */
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1); /* Adds a subtle shadow for depth */
+}
+
+/* Flexbox container that holds all the slides */
+.slider {
+    display: flex; /* Enables flexbox layout to line up slides horizontally */
+    transition: transform 0.4s ease-in-out; /* Smooth transition when sliding between images */
+}
+
+/* Each individual slide - takes up full width of the container */
+.slide {
+    min-width: 100%; /* Each slide takes up 100% of the slider container's width */
+    height: 500px; /* Fixed height for each slide */
+    transition: transform 0.5s ease-in-out; /* Smooth transition when slides are changed */
+}
+
+/* Ensures that images fill the slide area while maintaining aspect ratio */
+.slide img {
+    width: 100%; /* Image width matches the slide width */
+    height: 100%; /* Image height matches the slide height */
+    object-fit: cover; /* Images are scaled to cover the entire slide, cropping if necessary */
+    
+}
+
+/* Common styling for both previous and next navigation buttons */
+.prev, .next {
+    position: absolute; /* Absolute positioning within the slider container */
+    top: 50%; /* Centers the button vertically */
+    transform: translateY(-50%); /* Offsets the button position by half its height */
+    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent black background */
+    color: white; /* White color for the arrow icons */
+    border: none; /* Removes default button borders */
+    width: 40px; /* Fixed width for the buttons */
+    height: 40px; /* Fixed height for the buttons */
+    cursor: pointer; /* Changes the cursor to pointer on hover */
+    z-index: 10; /* Ensures buttons appear above the slider content */
+    border-radius: 50%; /* Makes the buttons round */
+    transition: background-color 0.3s ease; /* Smooth transition for background color on hover */
+    display: flex; /* Enables flexbox for centering the arrow inside the button */
+    justify-content: center; /* Centers arrow horizontally */
+    align-items: center; /* Centers arrow vertically */
+    padding: 0; /* Removes any default padding */
+}
+
+/* Positioning the previous button to the left */
+.prev {
+    left: 10px; /* Positions the button 10px from the left edge */
+}
+
+/* Positioning the next button to the right */
+.next {
+    right: 10px; /* Positions the button 10px from the right edge */
+}
+
+/* Hover effect for navigation buttons */
+.prev:hover, .next:hover {
+    background-color: rgba(0, 0, 0, 0.8); /* Darkens the button background on hover */
+}
+
+/* Container for the dot indicators below the slider */
+.dots-container {
+    margin-top: 20px; /* Space above the dots */
+    display: flex; /* Enables flexbox layout for horizontal alignment */
+    justify-content: center; /* Centers the dots horizontally */
+    align-items: center; /* Centers the dots vertically */
+}
+
+/* Common styling for each individual dot */
+.dot {
+    height: 15px; /* Fixed height for the dots */
+    width: 15px; /* Fixed width for the dots */
+    margin: 0 5px; /* Spacing between the dots */
+    background-color: rgba(255, 255, 255, 0.5); /* Semi-transparent white background */
+    border-radius: 50%; /* Makes the dots round */
+    display: inline-block; /* Ensures dots are inline */
+    cursor: pointer; /* Changes cursor to pointer on hover */
+    transition: background-color 0.3s ease; /* Smooth transition for background color on hover */
+}
+
+/* Styling for the active dot - indicates the current slide */
+.dot.active {
+    background-color: rgba(255, 255, 255, 1); /* Solid white background for the active dot */
+}
+
+.texto_imagen {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+    height: 100%;
+   
+}
+
+</style>
+</head>
+<body>
+    
+        
+            <div style="padding: 20px;">
+                <h3 style="color: black; font-size: 3rem;">Casa en Lomas de Comanjilla</h3>
+            </div>
+            
+            <div class="texto_imagen">
+                <div style="width: 40%; text-align: center;">
+                    <div>
+                        <img src="img/inmobiliaria_logo.png" alt="" style="height: 30vh;">
+                        <p style="color: black; font-size: 2rem; margin: 10px;">Precio: $9,000,000</p>
+                        <p style="color: black; padding: 5px;">Lorem ipsum dolor, sit amet consectetur adipisicing elit. A facilis fugiat explicabo tempore pariatur vero repellendus porro repellat odio error? Iure enim adipisci aut labore.</p>
+                    </div>
+                    <div style="color: black; display: flex; justify-content: space-around; margin: 2rem;">
+                        <p>1 Recamara</p>
+                        <p>2 1/2 Baños</p>
+                        <p>60m2</p>
+                    </div>
+                    <div style="color: black; display: flex; justify-content: space-around; margin-top: 3rem;">
+                        <a href=""><p>Contáctanos</p></a>
+                        <a href=""><p>Reservar Cita</p></a>
+                    </div>
+                </div>
+
+                <div class="background">
+                    <div class="slider-container">
+                        <div class="slider">
+                            <div class="slide"><img src="img/departamento-heroes.jpeg" alt="Image 1"></div>
+                            <div class="slide"><img src="img/WhatsApp Image 2024-12-11 at 9.07.56 p.m..jpeg" alt="Image 2"></div>
+                            <div class="slide"><img src="img/WhatsApp Image 2024-12-11 at 9.20.52 p.m..jpeg" alt="Image 3"></div>
+                            
+                        </div>
+                        <button class="prev">&#10094;</button>
+                        <button class="next">&#10095;</button>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="contacto_container">
+                <div class="contacto">
+                    <div class="contac_text">
+                        <h1>Comunicate con nosotros</h1>
+                        <p>¿Quieres comprar o vender tu casa? ¿Quieres utilizar o deshacerte de tu crédito INFONAVIT?<br> Contactanós al 4776547809</p>
+                    </div>
+                    <div class="iconos_contacto">
+                        <div class="icono_individual">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" class="bi bi-house-door-fill" viewBox="0 0 16 16">
+                                <path d="M6.5 14.5v-3.505c0-.245.25-.495.5-.495h2c.25 0 .5.25.5.5v3.5a.5.5 0 0 0 .5.5h4a.5.5 0 0 0 .5-.5v-7a.5.5 0 0 0-.146-.354L13 5.793V2.5a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1.293L8.354 1.146a.5.5 0 0 0-.708 0l-6 6A.5.5 0 0 0 1.5 7.5v7a.5.5 0 0 0 .5.5h4a.5.5 0 0 0 .5-.5"/>
+                              </svg>
+                            <h4>Dirección</h4>
+                            <p>Puerto de Mallorca #323</p>
+                        </div>
+                        <div class="icono_individual">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" class="bi bi-telephone-fill" viewBox="0 0 16 16">
+                                <path fill-rule="evenodd" d="M1.885.511a1.745 1.745 0 0 1 2.61.163L6.29 2.98c.329.423.445.974.315 1.494l-.547 2.19a.68.68 0 0 0 .178.643l2.457 2.457a.68.68 0 0 0 .644.178l2.189-.547a1.75 1.75 0 0 1 1.494.315l2.306 1.794c.829.645.905 1.87.163 2.611l-1.034 1.034c-.74.74-1.846 1.065-2.877.702a18.6 18.6 0 0 1-7.01-4.42 18.6 18.6 0 0 1-4.42-7.009c-.362-1.03-.037-2.137.703-2.877z"/>
+                              </svg>
+                            <h4>Teléfono</h4>
+                            <p>Puerto de Mallorca #323</p>
+                        </div>
+                        <div class="icono_individual">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" class="bi bi-envelope-fill" viewBox="0 0 16 16">
+                                <path d="M.05 3.555A2 2 0 0 1 2 2h12a2 2 0 0 1 1.95 1.555L8 8.414zM0 4.697v7.104l5.803-3.558zM6.761 8.83l-6.57 4.027A2 2 0 0 0 2 14h12a2 2 0 0 0 1.808-1.144l-6.57-4.027L8 9.586zm3.436-.586L16 11.801V4.697z"/>
+                              </svg>
+                            <h4>Email</h4>
+                            <p>Puerto de Mallorca #323</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    
+  
+    <script>
+        const slider = document.querySelector('.slider');
+        const slides = document.querySelectorAll('.slide');
+        const prevBtn = document.querySelector('.prev');
+        const nextBtn = document.querySelector('.next');
+        const dots = document.querySelectorAll('.dot');
+        const sliderContainer = document.querySelector('.slider-container');
+
+        let currentIndex = 0; // Tracks the current slide index
+        let autoSlideInterval; // Will hold the interval ID for auto-sliding
+
+        // Function to update the active dot indicator
+        function updateDots() {
+            dots.forEach((dot, index) => {
+                if (index === currentIndex) {
+                    dot.classList.add('active');
+                } else {
+                    dot.classList.remove('active');
+                }
+            });
+        }
+
+        // Function to display a specific slide based on the index
+        function showSlides(index) {
+            if (index >= slides.length) {
+                currentIndex = 0; // Reset to first slide if at the end
+            } else if (index < 0) {
+                currentIndex = slides.length - 1; // Go to last slide if at the beginning
+            } else {
+                currentIndex = index; // Otherwise, set to the provided index
+            }
+            slider.style.transform = `translateX(-${currentIndex * 100}%)`; // Slide transition
+            updateDots(); // Update the dots to reflect the current slide
+        }
+
+        // Function to move to the next slide
+        function nextSlide() {
+            showSlides(currentIndex + 1);
+        }
+
+        // Function to move to the previous slide
+        function prevSlide() {
+            showSlides(currentIndex - 1);
+        }
+
+        // Start the automatic sliding of images
+        function startAutoSlide() {
+            autoSlideInterval = setInterval(nextSlide, 4000); // Slide every 4 seconds
+        }
+
+        // Stop the automatic sliding
+        function stopAutoSlide() {
+            clearInterval(autoSlideInterval); // Clear the interval
+        }
+
+        // Add click event listeners to dots for direct slide navigation
+        dots.forEach(dot => {
+            dot.addEventListener('click', () => {
+                stopAutoSlide(); // Stop auto-slide when manually selecting a slide
+                showSlides(parseInt(dot.dataset.index)); // Show the selected slide
+                startAutoSlide(); // Restart auto-slide
+            });
+        });
+
+        // Add event listeners for navigation buttons
+        nextBtn.addEventListener('click', nextSlide);
+        prevBtn.addEventListener('click', prevSlide);
+
+        // Stop auto-slide when the mouse enters the slider container
+        sliderContainer.addEventListener('mouseover', stopAutoSlide);
+
+        // Restart auto-slide when the mouse leaves the slider container
+        sliderContainer.addEventListener('mouseout', startAutoSlide);
+
+        // Start auto-slide when the page loads
+        startAutoSlide();
+        updateDots(); // Initialize the dots
+    </script>
+</body>
+</html>

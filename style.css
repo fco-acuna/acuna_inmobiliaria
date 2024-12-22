@@ -1,0 +1,301 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+.pt-serif-regular {
+    font-family: "PT Serif", serif;
+    font-weight: 400;
+    font-style: normal;
+}
+  
+.pt-serif-bold {
+    font-family: "PT Serif", serif;
+    font-weight: 700;
+    font-style: normal;
+}
+  
+.pt-serif-regular-italic {
+    font-family: "PT Serif", serif;
+    font-weight: 400;
+    font-style: italic;
+}
+  
+.pt-serif-bold-italic {
+    font-family: "PT Serif", serif;
+    font-weight: 700;
+    font-style: italic;
+}
+  
+.cards {
+    display: flex;
+    padding: 10px;
+    position: relative;
+    transform: translateY(-10vh);
+    overflow: hidden;
+}
+
+.card {
+    background-color: #f7f8f9;
+    height: 30vh;
+    margin: 10px;
+    border-radius: 10px;
+    text-align: center;
+    display: flex;  /* Establece el uso de Flexbox */
+    flex-direction: column;  /* Alinea el contenido de manera vertical */
+    justify-content: center;  /* Centra el contenido verticalmente */
+    align-items: center;  /* Centra el contenido horizontalmente */
+}
+
+.card h4 {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.black-background {
+    text-align: center;
+    color: white;
+    background-color: #1e2124;
+    height: 70vh;
+    padding: 20px;
+    
+}
+
+
+/* CSS */
+.button-10 {
+  display: flex;
+  align-items: center;
+  padding: 12px 28px;
+  font-family: -apple-system, BlinkMacSystemFont, 'Roboto', sans-serif;
+  border-radius: 6px;
+  border: none;
+  color: #fff;
+  background: linear-gradient(180deg, #4B91F7 0%, #367AF6 100%);
+   background-origin: border-box;
+  box-shadow: 0px 0.5px 1.5px rgba(54, 122, 246, 0.25), inset 0px 0.8px 0px -0.25px rgba(255, 255, 255, 0.2);
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
+
+.button-10:focus {
+  box-shadow: inset 0px 0.8px 0px -0.25px rgba(255, 255, 255, 0.2), 0px 0.5px 1.5px rgba(54, 122, 246, 0.25), 0px 0px 0px 3.5px rgba(58, 108, 217, 0.5);
+  outline: 0;
+}
+
+.div-boton {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-top: 40px;
+}
+
+.texto-inicio {
+    font-size: 2rem;
+    text-align: center; /* Centra el texto dentro del div */
+    margin-top: 40px;
+}
+
+.container-tarjetas-casa {
+    display: flex;
+    padding: 10px;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+
+
+
+.tarjeta-casa {
+    width: 30%;
+}
+
+.imagen-casa {
+    background-image: url(img/pexels-kokorevas-14529622.jpg);
+    height: 270px;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.imagen-casa_1 {
+    background-image: url(img/WhatsApp\ Image\ 2024-12-11\ at\ 9.07.56\ p.m..jpeg);
+    height: 270px;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.imagen-casa-1 {
+    background-image: url(img/WhatsApp\ Image\ 2024-12-11\ at\ 9.20.52\ p.m..jpeg);
+    height: 270px;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.imagen-casa-2 {
+    background-image: url(img/departamento-heroes.jpeg);
+    height: 270px;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+
+
+.renta-venta {
+    display: flex;
+    justify-content: flex-start; /* Alinea horizontalmente el contenido dentro de renta-venta */
+    align-items: center; /* Centra verticalmente los elementos dentro de renta-venta */
+}
+
+.descripcion {
+   display: flex;
+   justify-content: space-between;
+   border-top: 2px solid;
+   background-color: #f7f8f9;
+}
+
+.amenidad {
+    border-right: 1px grey solid;
+    width: 30%;
+    text-align: center;
+    padding: 10px;
+}
+
+.container-precios {
+    padding: 15px;
+}
+
+.price {
+    font-size: 1.3rem;
+}
+
+.price p {
+    font-family: 'PT-serif';
+}
+
+.renta-venta-opcion {
+    margin-left: 5px;
+    background-color: lightgrey;
+    padding: 2px;
+    opacity: 0.6;
+}
+
+.renta-venta-opcion p {
+    font-size: 0.7rem;
+}
+
+.descripcion-casa {
+    margin-bottom: 5px;
+}
+
+.descripcion-casa p {
+    font-size: 1.3rem;
+    font-family: 'PT Serif';
+}
+
+.navbar_elements {
+    display: flex;
+    justify-content: space-around;
+    height: 2.5rem;
+    align-items: center;
+    width: 100%;
+}
+
+.navbar_elements li {
+    list-style-type: none;
+}
+
+.navbar_elements li a {
+    text-decoration: none;
+    color: white;
+}
+
+header {
+    background-color: #1e2124;
+}
+
+.botones-informacion {
+    justify-content: space-around;
+    display: flex;
+    width: 100%;
+    height: 2rem;
+    background-color: #1e2124;
+    align-items: center;
+}
+
+.botones-informacion a {
+    text-decoration: none;
+    color: white;
+}
+
+.cta {
+    position: relative;
+    padding: 20px;
+    text-align: center;
+    top: -30px;
+}
+
+
+.cta_2 {
+    position: relative;
+    padding: 20px;
+    text-align: center;
+    margin-top: 45px;
+    margin-bottom: 45px;
+}
+
+.cta_2 h3 {
+    font-size: 2rem;
+}
+
+
+.cta h3 {
+    font-size: 2rem;
+}
+
+.black-background img {
+    height: 300px;
+}
+
+.contacto_container {
+    padding: 30px;
+    background-color: #1e2124;
+    color: white;
+}
+
+.contacto {
+    width: 60%;
+    text-align: center;
+    margin: 0 auto;
+}
+
+.iconos_contacto {
+    padding-top: 20px;
+    margin: 15px;
+    display: flex;
+    width: 100%;
+    justify-content: center;
+}
+
+.contac_text {
+    margin: 0 auto;
+    
+}
+
+.contac_text h1 {
+    font-size: 2.5rem;
+    margin-bottom: 25px;
+}
+
+.contac_text p {
+    font-size: 1.5rem;
+}
+
+.icono_individual {
+    margin: 10px;
+    
+}
